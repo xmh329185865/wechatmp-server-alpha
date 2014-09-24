@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ana.database.dao.OrderDAO" table="`order`" dynamic-insert="true" dynamic-update="true">
+        <id name="order_id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property name="client_name" type="java.lang.String" length="45" not-null="true"/>
+        <property name="client_cell" type="java.lang.String" length="45" not-null="true"/>
+        <property name="client_building" type="java.lang.String" length="45" not-null="true"/>
+        <property name="client_room" type="java.lang.String" length="45" not-null="true"/>
+        <property name="order_timestamp" type="java.sql.Timestamp" generated="always" not-null="true"/>
+        <property name="order_resvtime" type="java.util.Calendar"/>
+        <property name="order_description" type="java.sql.Blob"/>
+        <property name="order_status" type="java.lang.Integer" not-null="true"/>
+        <property name="order_supadmin" type="java.lang.String" length="200"/>
+        <property name="order_nowadmin" type="java.lang.String" length="45"/>
+        <property name="order_diagnosis" type="java.sql.Blob"/>
+        <property name="order_wechatid" type="java.lang.String" length="50"/>
+        <property name="order_ratedesc" type="java.sql.Blob"/>
+        <property name="order_result" type="java.sql.Blob"/>
+        <property name="order_cercode" type="java.lang.String" length="128" not-null="true"/>
+        <property name="order_solveway" type="java.sql.Blob"/>
+        <property name="order_ratelevel" type="java.lang.Integer"/>
+        <property name="order_faultip" type="java.lang.String" length="45" not-null="true"/>
+        <property name="order_fixedtime" type="java.sql.Timestamp"/>
+    </class>
+</hibernate-mapping>

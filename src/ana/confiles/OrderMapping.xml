@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE WCMP2DB-FieldMapping [
+	<!ELEMENT mappingrules (mapping*)>
+	<!ELEMENT mapping EMPTY>
+	<!ATTLIST mapping 
+		name CDATA #REQUIRED
+		auth (all|admin|root|client) #REQUIRED
+		dbtable NMTOKEN #REQUIRED
+		dbfield NMTOKEN #REQUIRED
+		priority NMTOKEN #REQUIRED>
+]>
+
+<mappingrules>
+    <mapping name="故障单号"	auth="all"		dbtable="order"		dbfield="order_id"			priority="1"/>
+	<mapping name="报修人姓名"	auth="all"		dbtable="order"		dbfield="client_name"		priority="5"/>
+	<mapping name="联系电话"	auth="all"		dbtable="order"		dbfield="client_cell"		priority="8"/>
+	<mapping name="宿舍楼"	auth="all"		dbtable="order"		dbfield="client_building"	priority="12"/>
+	<mapping name="房号"		auth="all"		dbtable="order"		dbfield="client_room"		priority="13"/>
+	<mapping name="报修IP"	auth="all"		dbtable="order"		dbfield="order_faultip"		priority="16"/>
+	<mapping name="报修时间"	auth="all"		dbtable="order"		dbfield="order_timestamp"	priority="17"/>
+	<mapping name="故障描述"	auth="all"		dbtable="order"		dbfield="order_description"	priority="22"/>
+	<mapping name="预约时间"	auth="all"		dbtable="order"		dbfield="order_resvtime"	priority="19"/>
+	<mapping name="接单网管"	auth="admin"	dbtable="order"		dbfield="order_nowadmin"	priority="29"/>
+	<mapping name="负责网管"	auth="admin" 	dbtable="order"		dbfield="order_supadmin" 	priority="25"/>
+	<mapping name="故障诊断"	auth="admin" 	dbtable="order"		dbfield="order_diagnosis"	priority="35"/>
+	<mapping name="处理结果"	auth="admin" 	dbtable="order"		dbfield="order_result"		priority="40"/>
+	<mapping name="解决途径"	auth="admin" 	dbtable="order"		dbfield="order_solveway"	priority="45"/>
+	<mapping name="处理进程"	auth="admin" 	dbtable="order"		dbfield="order_status"		priority="22"/>
+	<mapping name="完成时间"	auth="admin" 	dbtable="order"		dbfield="order_fixedtime"	priority="47"/>
+	<mapping name="用户评价"	auth="client"	dbtable="order"		dbfield="order_ratedesc" 	priority="50"/>
+	<mapping name="总体评价"	auth="client"	dbtable="order"		dbfield="order_ratelevel"	priority="55"/>
+	<mapping name="用户凭证"	auth="client"	dbtable="order"		dbfield="order_cercode"		priority="26"/>
+</mappingrules>	

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ana.database.dao.JobDAO" table="`job`" dynamic-insert="true" dynamic-update="true">
+        <id name="job_id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property name="job_name" type="java.lang.String" length="45" not-null="true"/>
+        <property name="job_desc" type="java.sql.Blob"/>
+        <property name="job_auth" type="java.lang.Integer" not-null="true"/>
+    </class>
+</hibernate-mapping>

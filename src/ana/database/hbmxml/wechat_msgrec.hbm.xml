@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ana.database.dao.Wechat_msgrecDAO" table="`wechat_msgrec`" dynamic-insert="true" dynamic-update="true">
+        <id name="msg_id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property name="msg_wcmsgid" type="java.lang.String" length="80" not-null="true"/>
+        <property name="msg_timestamp" type="java.sql.Timestamp"/>
+        <property name="msg_content" type="java.sql.Blob"/>
+        <property name="msg_type" type="java.lang.Integer" not-null="true"/>
+        <property name="msg_fromuser" type="java.lang.String" length="45" not-null="true"/>
+        <property name="msg_touser" type="java.lang.String" length="45" not-null="true"/>
+        <property name="msg_mediaid" type="java.lang.String" length="45"/>
+        <property name="msg_picurl" type="java.lang.String" length="500"/>
+        <property name="msg_format" type="java.lang.String" length="45"/>
+        <property name="msg_recognition" type="java.sql.Blob"/>
+        <property name="msg_thumbmediaid" type="java.lang.String" length="45"/>
+        <property name="msg_location_x" type="java.lang.String" length="45"/>
+        <property name="msg_location_y" type="java.lang.String" length="45"/>
+        <property name="msg_scale" type="java.lang.String" length="45"/>
+        <property name="msg_label" type="java.lang.String" length="150"/>
+        <property name="msg_title" type="java.lang.String" length="200"/>
+        <property name="msg_description" type="java.sql.Blob"/>
+        <property name="msg_url" type="java.lang.String" length="300"/>
+        <property name="event_type" type="java.lang.Integer"/>
+        <property name="msg_precision" type="java.lang.String" length="45"/>
+    </class>
+</hibernate-mapping>

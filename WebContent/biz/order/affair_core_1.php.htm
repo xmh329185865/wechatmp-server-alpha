@@ -1,0 +1,99 @@
+<html>
+<head>
+	<title></title>
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Content-Type" content="text/html; charset=gbk">
+	<link rel="stylesheet" type="text/css" href="affair_core.php_files/blue.css">
+</head>
+<body>
+	<br><br>
+	<div align="center">
+		<table bgcolor="#A6CFED" border="0" cellpadding="5" cellspacing="1" width="90%">
+			<tbody>
+				<tr bgcolor="#4FB4DE">
+					<td colspan="3" align="left"><font color="#FFFFFF">故障管理 &gt; 故障查询</font></td>
+				</tr>
+				<tr bgcolor="#EEF7F9">
+					<td><b>选项</b></td>
+					<td><b>条件</b></td>
+					<td><b>提交</b></td>
+				</tr>
+				<form method="POST" action="affair_core.php?flag=queryhandle"></form>
+					<tr bgcolor="#EEF7F9">
+						<td>故障编号</td>
+						<td><input name="id" size="20" maxlength="255" type="text"></td>
+						<td><input name="index" value="by_id" type="hidden"><input value="查询" type="submit"></td>
+					</tr>
+				<form method="POST" action="affair_core.php?flag=queryhandle"></form>
+					<tr bgcolor="#EEF7F9"><td>关键字</td>
+						<td><input name="key" size="20" maxlength="255" type="text"></td>
+						<td><input name="index" value="by_key" type="hidden"><input value="查询" type="submit"></td>
+					</tr>
+				<form method="POST" action="affair_core.php?flag=queryhandle"></form>
+				<tr bgcolor="#EEF7F9">
+					<td>选择区域</td>
+					<td>
+						<select name="area">
+							<option value="all" selected="selected">所有区域</option>
+							<option value="1">家属区静态IP</option>
+							<option value="2">西校区家属区</option>
+							<option value="3">东校区教学区</option>
+							<option value="4">西校区教学区</option>
+							<option value="5">东校区学生宿舍</option>
+							<option value="6">西校区学生宿舍</option>
+							<option value="7">曲江校区</option>
+							<option value="8">周边</option>
+							<option value="9">家属区PPPOE</option>
+							<option value="10">主机房</option>
+						</select>
+					</td>
+					<td><input name="index" value="by_area" type="hidden"><input value="查询" type="submit"></td>
+				</tr>
+				<form method="POST" action="affair_core.php?flag=queryhandle"></form>
+				<tr bgcolor="#EEF7F9">
+					<td>选择类型</td>
+					<td>
+						<select name="type">
+							<option value="all" selected="selected">所有类型</option>
+							<option value="1">网络不通</option>
+							<option value="3">楼层设备故障（不通）</option>
+							<option value="4">楼（网段）不通</option>
+							<option value="5">新开户无法连接</option>
+							<option value="6">虚拟ADSL</option>
+							<option value="7">邮件问题</option>
+							<option value="8">系统自动发现</option>
+							<option value="100">微信提交</option>
+						</select>
+					</td>
+					<td><input name="index" value="by_type" type="hidden"><input value="查询" type="submit"></td>
+				</tr>
+				<form method="POST" action="affair_core.php?flag=queryhandle"></form>
+				<tr bgcolor="#EEF7F9">
+					<td>选择处理人员</td>
+					<td>
+						<select name="person">
+							<option value="all" selected="selected">所有人员</option>
+							<option value="liuchen">刘宸</option>
+							<option value="xljia">贾晓丽</option>
+							<option value="xca">徐崇安</option>
+						</select>
+					</td>
+					<td><input name="index" value="by_person" type="hidden"><input value="查询" type="submit"></td>
+				</tr>
+				<form method="POST" action="affair_core.php?flag=queryhandle"></form>
+				<tr bgcolor="#EEF7F9">
+					<td>选择故障录入时间</td>
+					<td>
+						起始<input name="start_time" type="datetime-local"/>
+						结束<input name="end_time" type="datetime-local"/>
+					</td>
+					<td><input name="index" value="by_date" type="hidden"><input value="查询" type="submit"></td>
+				</tr>
+				<tr align="center" bgcolor="#4FB4DE">
+					<td colspan="3"><font color="#FFFFFF">故障管理 &gt; 故障查询</font></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

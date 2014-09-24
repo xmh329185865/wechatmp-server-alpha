@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ana.database.dao.StaffDAO" table="`staff`" dynamic-insert="true" dynamic-update="true">
+        <id name="staff_id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property name="staff_name" type="java.lang.String" length="45" not-null="true"/>
+        <property name="staff_job_name" type="java.lang.String" length="45"/>
+        <property name="staff_cell" type="java.lang.String" length="45"/>
+        <property name="staff_domain" type="java.sql.Blob"/>
+        <property name="staff_group_name" type="java.lang.String" length="45"/>
+        <property name="staff_department_name" type="java.lang.String" length="45"/>
+        <property name="staff_qq" type="java.lang.String" length="45"/>
+        <property name="staff_gender" type="java.lang.Integer" not-null="true"/>
+        <property name="staff_grade" type="java.lang.Integer"/>
+        <property name="staff_campus" type="java.lang.String" length="45"/>
+        <property name="staff_oapwd" type="java.lang.String" length="128"/>
+        <property name="staff_wechatacc" type="java.lang.String" length="45"/>
+        <property name="staff_wechatopenid" type="java.lang.String" length="45"/>
+        <property name="staff_addrbuilding" type="java.lang.String" length="45"/>
+        <property name="staff_addrroom" type="java.lang.String" length="45"/>
+        <property name="staff_job_id" type="java.lang.Integer"/>
+        <property name="staff_group_id" type="java.lang.Integer"/>
+        <property name="staff_department_id" type="java.lang.Integer"/>
+        <property name="staff_group_role_id" type="java.lang.Integer"/>
+        <property name="staff_group_role_name" type="java.lang.String" length="45"/>
+        <property name="staff_stuid" type="java.lang.String" length="45" not-null="true" unique="true"/>
+    </class>
+</hibernate-mapping>

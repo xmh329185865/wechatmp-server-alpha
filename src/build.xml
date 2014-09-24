@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="hibernate-tutorial" default="compile">
+
+    <property name="sourcedir" value="E:/Software/J2EE Workspace/ANA-WCMP1.0/src"/>
+    <property name="targetdir" value="E:/Software/J2EE Workspace/ANA-WCMP1.0/bin"/>
+    <property name="librarydir" value="E:/Software/J2EE Workspace/ANA-WCMP1.0/lib"/>
+
+    <path id="libraries">
+        <fileset dir="${librarydir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="clean">
+        <delete dir="${targetdir}"/>
+        <mkdir dir="${targetdir}"/>
+    </target>
+
+    <target name="compile" depends="clean, copy-resources">
+      <javac srcdir="${sourcedir}"
+             destdir="${targetdir}"
+             classpathref="libraries"/>
+    </target>
+
+    <target name="copy-resources">
+        <copy todir="${targetdir}">
+            <fileset dir="${sourcedir}">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+
+</project>

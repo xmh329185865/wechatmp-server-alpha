@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ana.database.dao.Wechat_subscribersDAO" table="`wechat_subscribers`" dynamic-insert="true" dynamic-update="true">
+        <id name="wcuser_id" type="java.lang.Long">
+            <generator class="identity"/>
+        </id>
+        <property name="wcuser_openid" type="java.lang.String" length="45" not-null="true"/>
+        <property name="subscribe_timestamp" type="java.sql.Timestamp"/>
+        <property name="wcuser_group_id" type="java.lang.Integer"/>
+        <property name="wcuser_wechatacc" type="java.lang.String" length="45"/>
+    </class>
+</hibernate-mapping>

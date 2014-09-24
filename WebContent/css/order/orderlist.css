@@ -1,0 +1,92 @@
+
+table.ordertable {
+	background-color:#a6cfed;
+	border:none;
+	padding:5px;
+	width:90%;
+	font-family:Microsoft YaHei;
+}
+
+div.areadiv {
+	font-family:Microsoft YaHei;
+	color:#FFFFFF;
+	background-color:#4FB4DE;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table.searchtable {
+	background-color:#a6cfed;
+	width:100%;
+	border:none;
+	padding:5px;
+	font-family:Microsoft YaHei;
+	
+}
+
+table.searchtable th{
+	background-color:#EEF7F9;
+}
+
+table.searchtable tr td{
+	background-color:#EEF7F9;
+}
+
+table.searchtable tr td.searchbutton{
+	text-align:center;
+}
+
+div.searchdiv {
+	font-family:Microsoft YaHei;
+	color:#FFFFFF;
+	background-color:#4FB4DE;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.searchdiv form{
+	margin-bottom: 0px;
+	margin-top:0px;
+}
+
+div.tablediv form{
+	margin-bottom: 0px;
+	margin-top:0px;
+}
+
+table.ordertable th{
+	background-color:#EEF7F9;
+}
+
+table.ordertable tr.line{
+	background-color:#EEF7F9;
+	line-height:40px;
+	font-size: 12px;
+}
+
+table.ordertable tr td{
+	background-color:#EEF7F9;
+}
+
+div.pagediv {
+	font-family:Microsoft YaHei;
+	background-color:#a6cfed;
+	border: none;
+	width: 90%;
+	color:#000000;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.submitdiv {
+	font-family:Microsoft YaHei;
+	background-color:#4FB4DE;
+	border: none;
+	width: 90%;
+	color:#FFFFFF;
+	margin-left: auto;
+	margin-right: auto;
+}
+

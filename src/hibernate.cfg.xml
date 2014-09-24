@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE hibernate-configuration PUBLIC  
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
+<hibernate-configuration> 
+	<session-factory> 
+	<!-- 各属性的配置-->  
+	
+		<!-- 为true表示将Hibernate发送给数据库的sql显示出来 --> 
+		<property name="show_sql">true</property> 
+		
+		<!-- SQL方言，这边设定的是MySQL --> 
+		<property name="dialect">org.hibernate.dialect.MySQLDialect</property> 
+		
+		<!--驱动程序--> 
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property> 
+		
+		<!-- JDBC URL --> 
+		<property name="connection.url">jdbc:mysql://115.154.109.194:3306/xjtuana1.0</property> 
+		
+		<!-- 数据库用户名--> 
+		<property name="connection.username">xjtuana</property> 
+		
+		<!-- 数据库密码--> 
+		<property name="connection.password">xjtuana</property> 
+		
+		<!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">20</property>
+		
+		<!-- 映射文件 --> 
+		<mapping resource="ana/database/hbmxml/order.hbm.xml"/> 
+		<mapping resource="ana/database/hbmxml/wechat_msgrec.hbm.xml"/> 
+		<mapping resource="ana/database/hbmxml/staff.hbm.xml"/> 
+		<mapping resource="ana/database/hbmxml/wechat_subscribers.hbm.xml"/>
+		<mapping resource="ana/database/hbmxml/group_role.hbm.xml"/>
+		<mapping resource="ana/database/hbmxml/department.hbm.xml"/>
+		<mapping resource="ana/database/hbmxml/group.hbm.xml"/>
+		<mapping resource="ana/database/hbmxml/job.hbm.xml"/>
+		<mapping resource="ana/database/hbmxml/building.hbm.xml"/>
+	</session-factory> 
+</hibernate-configuration> 
