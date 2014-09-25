@@ -11,6 +11,7 @@ import ana.view.htmlwriter.exceptions.NoSuchTagException;
 import ana.view.htmlwriter.exceptions.NoTitleFoundException;
 import ana.view.htmlwriter.exceptions.UnsetAttributeException;
 import ana.view.htmlwriter.htmltags.HTMLTag;
+import ana.view.htmlwriter.htmltags.extended.HTMLDoctype;
 import ana.view.htmlwriter.htmltags.extended.HTMLScript;
 
 public class HTMLPage {
@@ -18,6 +19,7 @@ public class HTMLPage {
 	private HTMLTag rootTag = new HTMLTag("html");
 	private List<HTMLTag> rootStructure = new ArrayList<HTMLTag>();
 	private List<HTMLTag> bodyContent = new ArrayList<HTMLTag>();
+	private HTMLDoctype doctype = new HTMLDoctype();
 	
 	public HTMLPage(){
 		HTMLTag head = new HTMLTag("head");
@@ -216,6 +218,14 @@ public class HTMLPage {
 
 	public void setBodyContent(List<HTMLTag> bodyContent) {
 		this.bodyContent = bodyContent;
+	}
+
+	public HTMLDoctype getDoctype() {
+		return doctype;
+	}
+
+	public void setDoctype(HTMLDoctype doctype) {
+		this.doctype = doctype;
 	}
 
 }

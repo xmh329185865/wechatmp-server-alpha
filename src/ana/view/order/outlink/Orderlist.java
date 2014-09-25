@@ -17,7 +17,9 @@ import ana.view.htmlwriter.exceptions.NoSuchTagException;
 import ana.view.htmlwriter.exceptions.TagnumOutOfBoundsException;
 import ana.view.htmlwriter.htmltags.HTMLTag;
 import ana.view.htmlwriter.htmltags.extended.HTMLDiv;
+import ana.view.htmlwriter.htmltags.extended.HTMLScript;
 import ana.view.htmlwriter.htmltags.extended.HTMLTable;
+import ana.view.htmlwriter.htmltags.extended.HTMLif;
 import ana.view.htmlwriter.page.HTMLPage;
 
 public class Orderlist extends HTMLPage{ 
@@ -52,6 +54,7 @@ public class Orderlist extends HTMLPage{
 		super();
 		
 		try{
+			this.getDoctype().setDoctypecontent("html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"");
 			
 			HTMLTag head = this.getHead();
 			
@@ -67,9 +70,25 @@ public class Orderlist extends HTMLPage{
 			meta2.put("content", "text/html");
 			head.addSubTag(new HTMLTag("meta",meta2));
 			
+			this.addImportedCss("http://"+ServerProperties.webrootpath+"/css/imported/jquery-ui-timepicker-addon.css");
 			this.addImportedCss("http://"+ServerProperties.webrootpath+"/css/order/orderlist.css");
+			this.addImportedCss("http://"+ServerProperties.webrootpath+"/css/imported/jquery-ui.css");
 			this.addImportedScript("http://"+ServerProperties.webrootpath+"/js/order/orderlist.js", "text/javascript","gbk");
 			this.addImportedScript("http://"+ServerProperties.webrootpath+"/js/common/jquery-1.8.2.min.js", "text/javascript");
+			this.addImportedScript("http://"+ServerProperties.webrootpath+"/js/common/jquery-ui.min.js", "text/javascript");
+			this.addImportedScript("http://"+ServerProperties.webrootpath+"/js/timepicker/jquery.ui.datepicker-zh-CN.js.js", "text/javascript");
+			this.addImportedScript("http://"+ServerProperties.webrootpath+"/js/timepicker/jquery-ui-timepicker-addon.js", "text/javascript");
+			this.addImportedScript("http://"+ServerProperties.webrootpath+"/js/timepicker/jquery-ui-timepicker-zh-CN.js", "text/javascript");
+			HTMLScript datetime = new HTMLScript();
+			datetime.setScripts("jQuery(function () {jQuery('#search_timestamp_start').datetimepicker({timeFormat: \"HH:mm:ss\",dateFormat: \"yy-mm-dd\"});jQuery('#search_timestamp_end').datetimepicker({timeFormat: \"HH:mm:ss\",dateFormat: \"yy-mm-dd\"});jQuery('#search_resvtime_start').datetimepicker({timeFormat: \"HH:mm:ss\",dateFormat: \"yy-mm-dd\"});jQuery('#search_resvtime_end').datetimepicker({timeFormat: \"HH:mm:ss\",dateFormat: \"yy-mm-dd\"});});");
+			datetime.addOrSetAttr("type", "text/javascript");
+			head.addSubTag(datetime);
+			HTMLif forie = new HTMLif();
+			forie.setIfexpr("lt IE 9");
+			HTMLScript html5scriptforie = new HTMLScript();
+			html5scriptforie.addOrSetAttr("src", "http://"+ServerProperties.webrootpath+"/js/common/html5.js");
+			forie.addSubTag(html5scriptforie);
+			head.addSubTag(forie);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -133,13 +152,15 @@ public class Orderlist extends HTMLPage{
 			HashMap<String,String> start_timestamp_input= new HashMap<String,String>();
 			start_timestamp_input.put("id", "search_timestamp_start");
 			start_timestamp_input.put("name", "search_timestamp_start");
-			start_timestamp_input.put("type", "datetime-local");
+			start_timestamp_input.put("type", "text");
+			start_timestamp_input.put("readonly", "readonly");
 			row3_td2.addSubTag(new HTMLTag("input",start_timestamp_input));
 			row3_td2.addSubTag(new HTMLTag("span","жа"));
 			HashMap<String,String> end_timestamp_input= new HashMap<String,String>();
 			end_timestamp_input.put("id", "search_timestamp_end");
 			end_timestamp_input.put("name", "search_timestamp_end");
-			end_timestamp_input.put("type", "datetime-local");
+			end_timestamp_input.put("type", "text");
+			end_timestamp_input.put("readonly", "readonly");
 			row3_td2.addSubTag(new HTMLTag("input",end_timestamp_input));
 			row3.add(row3_td2);
 			this.searchtable.addRow(row3, null);
@@ -152,13 +173,15 @@ public class Orderlist extends HTMLPage{
 			HashMap<String,String> start_resvtime_input= new HashMap<String,String>();
 			start_resvtime_input.put("id", "search_resvtime_start");
 			start_resvtime_input.put("name", "search_resvtime_start");
-			start_resvtime_input.put("type", "datetime-local");
+			start_resvtime_input.put("type", "text");
+			start_resvtime_input.put("readonly", "readonly");
 			row4_td2.addSubTag(new HTMLTag("input",start_resvtime_input));
 			row4_td2.addSubTag(new HTMLTag("span","жа"));
 			HashMap<String,String> end_resvtime_input= new HashMap<String,String>();
 			end_resvtime_input.put("id", "search_resvtime_end");
 			end_resvtime_input.put("name", "search_resvtime_end");
-			end_resvtime_input.put("type", "datetime-local");
+			end_resvtime_input.put("type", "text");
+			end_resvtime_input.put("readonly", "readonly");
 			row4_td2.addSubTag(new HTMLTag("input",end_resvtime_input));
 			row4.add(row4_td2);
 			this.searchtable.addRow(row4, null);
