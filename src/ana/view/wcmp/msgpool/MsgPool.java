@@ -4,7 +4,7 @@ import ana.server.properties.ServerProperties;
 
 public class MsgPool {
 	
-	public static final String ERR_UNKNOWN_CONTENT = "非常抱歉，暂时还无法识别您的消息，您可以回复“帮助”获取使用方法";
+	public static final String ERR_UNKNOWN_CONTENT = "非常抱歉，暂时还无法识别您的消息。";
 	public static final String ERR_CONTENT = "请您正确填写信息！";
 	public static final String ERR_UNMATCHED_CONTENT = "抱歉，您未填写全部信息，或填写了过多的信息，系统无法为您提交，请您重新填写。";
 	public static final String INNER_ERR = "服务器内部错误！";
@@ -31,7 +31,7 @@ public class MsgPool {
 	public static final String HOW_TO_RATE = "欢迎使用故障处理评价反馈功能,您可以回复“维修评价#故障单号#评价内容#表现评分#”对我们的表现进行评价，评分采用五分制，1~5对应“非常不满意”~“非常满意”。例如：\r\n\r\n维修评价#10001#问题成功解决，处理得很及时，十分满意！#5#"
 			+ "\r\n\r\n请留意，您只能通过报修时使用的微信号完成故障的评价，评价完成后故障单将失效。";
 	
-	public static final String TITLE_HELP_WELCOME = "欢迎使用西交网管协会微信智能服务平台！";
+	public static final String TITLE_HELP_WELCOME = "欢迎使用西交网管会微信智能服务平台！";
 	public static final String TITLE_DECLARE_FAULT = "网络出现疑难故障？让我们帮您解决！请回复“我要报修”获取故障申报的方法。";
 	public static final String TITLE_ACCEPT_RANGE = "想知道我们的管辖范围，以及申报故障时如何填写楼号？请回复“受理范围”获取所有受理报修的楼号列表 。";
 	public static final String TITLE_SEARCH_ORDER = "需要查询故障单？实时跟踪您的故障单信息与处理情况，请回复“故障单查询#故障单号#”进行查询，例如：\r\n故障单查询#10001";
@@ -39,8 +39,10 @@ public class MsgPool {
 	public static final String TITLE_HOW_TO_RATE = "故障处理完后，希望您能给我们留下宝贵的意见和建议，帮助我们做的更好！请回复“我要评价”获取评价方式。";
 	public static final String TITLE_GET_CERTIFACATION = "需要评价凭证，请回复“凭证索取#故障单号#”索要您的凭证。";
 	public static final String TITLE_DELETE_ORDER = "如您需要取消故障申报，请回复“取消报修#故障单号#”";
+	public static final String TITLE_LOGO_DESIGN = "西交网管会LOGO设计大赛火热进行中~！";
+	public static final String DESC_LOGO_DESIGN = "活动对象：西安交通大学全体学生；活动时间：即日起至10月18日；主办方：西安交通大学学生网络管理协会。详情请戳……";
 	
-	public static final String[] SUB_WELCOME = {"欢迎关注西安交通大学网络管理协会！我们将竭诚为您服务！","您可以随时发送“帮助”获取使用指南。"};
+	public static final String[] SUB_WELCOME = {"欢迎关注西安交通大学网络管理协会！我们将竭诚为您服务！","您可以随时发送“帮助”获取使用指南。回复“活动”以获取最新的活动信息~！"};
 
 	public static final String[] ORDER_UPDATED = {"您的故障申报已经提交成功，我们的后台工作人员会尽快为您处理！请牢记您的故障单号："
 			,"回复“我要查单”获取查询方法，实时获取您的故障单状态！\r\n故障处理完毕后请记得给我们评价哦~(回复“我要评价”获取评价方法)"

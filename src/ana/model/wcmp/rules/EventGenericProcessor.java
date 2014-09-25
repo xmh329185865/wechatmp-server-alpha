@@ -36,12 +36,16 @@ public class EventGenericProcessor {
 				Article temp = new Article();
 				s.add(temp);
 			}
-			s.get(0).setPicUrl("http://"+ServerProperties.webrootpath+"/materials/welcome_title.png");
+			s.get(0).setPicUrl("http://"+ServerProperties.webrootpath+"/wcmp-materials/welcome_title.png");
 			s.get(0).setTitle(MsgPool.SUB_WELCOME[0]);
-			s.get(1).setTitle(MsgPool.TITLE_DECLARE_FAULT);
-			s.get(2).setTitle(MsgPool.TITLE_ACCEPT_RANGE);
-			s.get(3).setTitle(MsgPool.TITLE_SEARCH_ORDER);
-			s.get(4).setTitle(MsgPool.TITLE_HOW_TO_RATE);
+			s.get(1).setTitle(MsgPool.TITLE_LOGO_DESIGN);
+			s.get(1).setUrl("http://blog.sina.com.cn/s/blog_12eae5c7e0102v2dw.html");
+			s.get(1).setDescription(MsgPool.DESC_LOGO_DESIGN);
+			s.get(1).setPicUrl("http://"+ServerProperties.webrootpath+"/wcmp-materials/logo-design-thumb.png");
+			s.get(2).setTitle(MsgPool.TITLE_DECLARE_FAULT);
+			s.get(3).setTitle(MsgPool.TITLE_ACCEPT_RANGE);
+			s.get(4).setTitle(MsgPool.TITLE_SEARCH_ORDER);
+//			s.get(4).setTitle(MsgPool.TITLE_HOW_TO_RATE);
 			s.get(5).setTitle(MsgPool.SUB_WELCOME[1]);
 			this.respmsg.put("Articles", s);
 			this.respmsg.put("ArticleCount", s.size());

@@ -36,11 +36,11 @@ public class TxtRespRules {
 			respmsg.put("Content", MsgPool.DECLARE_FAULT.replaceFirst(":VOPENID", this.txtmsg.get("FromUserName").toString()));
 			return;
 					
-		} else if (this.ReqContent.startsWith("我要评价")) {
+//		} else if (this.ReqContent.startsWith("我要评价")) {
 			
-			respmsg.put("MsgType", WeChatMsgTypes.RESP_TEXT);
-			respmsg.put("Content", MsgPool.HOW_TO_RATE);
-			return;
+//			respmsg.put("MsgType", WeChatMsgTypes.RESP_TEXT);
+//			respmsg.put("Content", MsgPool.HOW_TO_RATE);
+//			return;
 			
 		} else if (this.ReqContent.startsWith("凭证索取#")) {
 			try {
@@ -61,7 +61,7 @@ public class TxtRespRules {
 				return;
 				
 			}			
-					
+/*					
 		} else if (this.ReqContent.startsWith("维修评价#")) {
 			
 			respmsg.put("MsgType", WeChatMsgTypes.RESP_TEXT);
@@ -90,8 +90,8 @@ public class TxtRespRules {
 			wcou.rateOrder(orderid, rate.get(1).toString(), this.txtmsg.get("FromUserName").toString(), ratelevel);
 			respmsg.put("Content", wcou.getBackString());
 			return;
-			
-		} else if (this.ReqContent.equals("我要查单")) {
+*/			
+			} else if (this.ReqContent.equals("我要查单")) {
 			
 			respmsg.put("MsgType", WeChatMsgTypes.RESP_TEXT);
 			respmsg.put("Content", MsgPool.TITLE_SEARCH_ORDER);
@@ -136,8 +136,9 @@ public class TxtRespRules {
 			s.get(1).setTitle(MsgPool.TITLE_DECLARE_FAULT);
 			s.get(2).setTitle(MsgPool.TITLE_ACCEPT_RANGE);
 			s.get(3).setTitle(MsgPool.TITLE_SEARCH_ORDER);
-			s.get(4).setTitle(MsgPool.TITLE_HOW_TO_RATE);
-			s.get(5).setTitle(MsgPool.TITLE_GET_CERTIFACATION);	
+//			s.get(4).setTitle(MsgPool.TITLE_HOW_TO_RATE);
+			s.get(4).setTitle(MsgPool.TITLE_GET_CERTIFACATION);	
+			s.get(5).setTitle(MsgPool.SUB_WELCOME[1]);
 			
 			respmsg.put("Articles", s);
 			respmsg.put("ArticleCount", s.size());
@@ -180,10 +181,24 @@ public class TxtRespRules {
 				return;
 			}
 			
-		} else {
+		} else if (this.ReqContent.contains("活动")){
+			respmsg.put("MsgType", WeChatMsgTypes.RESP_NEWS);
+			List<Article> s = new ArrayList<Article>();
+			
+			Article temp = new Article();
+			temp.setTitle(MsgPool.TITLE_LOGO_DESIGN);
+			temp.setPicUrl("http://"+ServerProperties.webrootpath+"/wcmp-materials/logo-design.png");
+			temp.setUrl("http://mp.weixin.qq.com/s?__biz=MzAwNzAzMjgzMw==&mid=200488714&idx=1&sn=62ae0fdebd83fb647d1e9b5d70fa04ab#rd");
+			temp.setDescription(MsgPool.DESC_LOGO_DESIGN);
+			s.add(temp);
+			
+			respmsg.put("Articles", s);
+			respmsg.put("ArticleCount", s.size());
+			return;
+		}	else {
 			
 			respmsg.put("MsgType", WeChatMsgTypes.RESP_TEXT);
-			respmsg.put("Content", MsgPool.ERR_UNKNOWN_CONTENT);
+			respmsg.put("Content", MsgPool.ERR_UNKNOWN_CONTENT+MsgPool.SUB_WELCOME[1]);
 			return;
 			
 		}
